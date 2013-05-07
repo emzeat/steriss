@@ -1,0 +1,9 @@
+[submodule "external/xdispatch"]
+	path = external/xdispatch
+	url = git://github.com/mlba-team/xdispatch.git
+[submodule "external/gflags"]
+	path = external/gflags
+	url = git://github.com/emzeat/gflags.git
+[submodule "build"]
+	path = build
+	url = git://github.com/emzeat/mz-cmaketools.git
