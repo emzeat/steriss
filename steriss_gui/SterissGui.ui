@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SterissGui</class>
+ <widget class="QWidget" name="SterissGui">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>749</width>
+    <height>467</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Steriss Gui</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="margin">
+    <number>6</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="layoutActions">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="cmdSaveConfig">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Save Config</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/save.tiff</normaloff>:/save.tiff</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cmdLoadConfig">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Load Config</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/load.tiff</normaloff>:/load.tiff</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cmdRunConfig">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Run Steriss</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/exec.tiff</normaloff>:/exec.tiff</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layoutBinary">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>used executable:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="txtBinary">
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cmdPickBinary">
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="chkVerbose">
+     <property name="text">
+      <string>verbose output (give more information while executing)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabConfiguration">
+      <attribute name="title">
+       <string>Configuration</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>-231</y>
+            <width>711</width>
+            <height>536</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <layout class="QFormLayout" name="formLayout_2">
+             <property name="sizeConstraint">
+              <enum>QLayout::SetMaximumSize</enum>
+             </property>
+             <property name="fieldGrowthPolicy">
+              <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+             </property>
+             <property name="rowWrapPolicy">
+              <enum>QFormLayout::DontWrapRows</enum>
+             </property>
+             <property name="labelAlignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+             <property name="formAlignment">
+              <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+             </property>
+             <property name="horizontalSpacing">
+              <number>6</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>&lt;b&gt;Input Directory:&lt;/b&gt;&lt;br/&gt;
+The directory containing the PGM files to read. Must exist and contain at least one file.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QLineEdit" name="txtInput">
+                 <property name="text">
+                  <string notr="true"/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="cmdPickInput">
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>&lt;b&gt;Output Directory:&lt;/b&gt;&lt;br/&gt;
+The directory were the result will be written to, will be created when not existing yet</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLineEdit" name="txtOutput">
+                 <property name="text">
+                  <string notr="true"/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="cmdPickOutput">
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>&lt;b&gt;Algorithm&lt;/b&gt;&lt;br/&gt;
+The algorithm to use, see README.txt for details</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QComboBox" name="cboAlgorithm">
+               <property name="editable">
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>plain</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>cube</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>&lt;b&gt;Threshold&lt;/b&gt;&lt;br/&gt;
+Primary threshold</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="txtThreshold">
+               <property name="text">
+                <string notr="true"/>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>&lt;b&gt;Border Threshold&lt;/b&gt;&lt;br/&gt;
+The secondary threshold</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="txtBorderThreshold">
+               <property name="text">
+                <string notr="true"/>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label_7">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>&lt;b&gt;Voxel File&lt;/b&gt;&lt;br/&gt;
+When enabled a STL file with a 3D image will be generated</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QCheckBox" name="chk3dObj">
+               <property name="text">
+                <string>Generate 3D Vertex File</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>&lt;b&gt;Overlay&lt;/b&gt;&lt;br/&gt;
+Set something different than Black in here to get a color overlay on the original image</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QPushButton" name="cmdColorOverlay">
+               <property name="text">
+                <string>000000000</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>&lt;b&gt;Output Format&lt;/b&gt;&lt;br/&gt;
+Set the file format of the output files</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QComboBox" name="cboOutputFormat">
+               <item>
+                <property name="text">
+                 <string>pgm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ppm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>png</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>tif</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>bmp</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabOutput">
+      <attribute name="title">
+       <string>Program Log</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPlainTextEdit" name="txtProgramLog">
+         <property name="font">
+          <font>
+           <family>Courier New</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="plainText">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="cmdClear">
+           <property name="text">
+            <string>Clear</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>&lt;html&gt;&lt;body&gt;&amp;copy; 2012 Marius Zwicker - All rights reserved&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>txtInput</tabstop>
+  <tabstop>cmdPickInput</tabstop>
+  <tabstop>txtOutput</tabstop>
+  <tabstop>cmdPickOutput</tabstop>
+  <tabstop>cboAlgorithm</tabstop>
+  <tabstop>txtThreshold</tabstop>
+  <tabstop>txtBorderThreshold</tabstop>
+  <tabstop>txtBinary</tabstop>
+  <tabstop>cmdPickBinary</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources>
+  <include location="application.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>cmdClear</sender>
+   <signal>clicked()</signal>
+   <receiver>txtProgramLog</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>736</x>
+     <y>457</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>554</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

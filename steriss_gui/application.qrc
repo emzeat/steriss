@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>exec.tiff</file>
+        <file>load.tiff</file>
+        <file>save.tiff</file>
+        <file>steriss_de_DE.qm</file>
+        <file>steriss_de_DE.ts</file>
+    </qresource>
+</RCC>
