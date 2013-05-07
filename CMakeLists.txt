@@ -41,6 +41,9 @@ mz_find_include_library( xdispatch
         SYS 0.6
         SRC external/xdispatch external/xdispatch/include xdispatch
 )
+if(NOT APPLE)
+ set(DISPATCH_LIBRARIES dispatch)
+endif()
 mz_add_library( gflags external/gflags )
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
@@ -73,8 +76,8 @@ if(APPLE)
 elseif(UNIX)
     set(LIBS statgrab)
 endif()
-target_link_libraries( steriss ${OpenCV_LIBS} ${XDISPATCH_LIBRARIES} gflags ${Boost_LIBRARIES} ${LIBS} )
-set_target_properties( steriss PROPERTIES DEBUG_POSTFIX "D")
+target_link_libraries( steriss ${OpenCV_LIBS} ${XDISPATCH_LIBRARIES} ${DISPATCH_LIBRARIES} gflags ${Boost_LIBRARIES} ${LIBS} )
+mz_target_props( steriss )
 
 
 file(GLOB steriss_gui_src steriss_gui/*.h steriss_gui/*.cpp)
@@ -87,5 +90,5 @@ qt4_add_translation(LANG ${steriss_ts})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 mz_auto_moc(MOC ${steriss_gui_src})
 add_executable( steriss_gui WIN32 ${steriss_gui_src} ${steriss_ui} ${steriss_res} ${steriss_ts} ${MOC} ${UI_H} ${RES} ${LANG})
-target_link_libraries( steriss_gui ${QT_LIBRARIES} ${XDISPATCH_LIBRARIES} gflags ${Boost_LIBRARIES} )
-set_target_properties( steriss_gui PROPERTIES DEBUG_POSTFIX "D")
+target_link_libraries( steriss_gui ${QT_LIBRARIES} ${XDISPATCH_LIBRARIES} ${DISPATCH_LIBRARIES} gflags ${Boost_LIBRARIES} )
+mz_target_props( steriss_gui )
