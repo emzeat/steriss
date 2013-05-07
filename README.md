@@ -9,10 +9,10 @@ Building
 --------
 
 Steriss has several dependencies:
- * a modern C++ compiler (gcc 4.7+ or vs 2010)
+ * a modern C++ compiler (gcc 4.7+, clang 3.2+ or MSVC 2010)
  * CMake 2.8.8 or later
- * XDispatch 0.7.x (install to external/xdispatch)
- * gflags 2.0 (install to svn:external/gflags)
+ * xdispatch 0.7 or later (configured as git submodule)
+ * gflags 2.0 (configured as git submodule)
  * boost 1.48+
  * opencv 2.4
  * Qt 4.8+
@@ -23,6 +23,9 @@ the 'build' directory or generate the needed project files directly
 from a unix compatible shell:
 
     cmake -G "Unix Makefiles" && make all
+
+Steriss can be built on Windows accordingly, please see the CMake
+documentation at www.cmake.org for details.
 
 
 Usage
